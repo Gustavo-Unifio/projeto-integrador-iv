@@ -1,2 +1,21 @@
 <button (click)="toggleOcultar()">Mostar / Ocultar</button>
-<p *ngIf="mostrarOcultar"> -Escrever algo- </p>
+
+<ul *ngIf="mostrarOcultar">
+    <li *ngFor="let item of listaAluno"
+    [ngClass]="{
+        'ativo': item.ativo,
+        'inativo': !item.ativo
+    }"
+    [ngStyle]="{'font-size': fontSize + 'px' }">
+        ID: {{ item.id }} | Nome: {{ item.nome }} | Status: {{ item.ativo }}
+    </li>
+
+    <div>
+        <button (click)="maisFonte()"> + </button>
+        <button (click)="menosFonte()"> - </button>
+    </div>
+</ul>
+
+
+
+
