@@ -2,12 +2,14 @@
 
 <ul *ngIf="mostrarOcultar">
     <li *ngFor="let item of listaAluno"
-    [ngClass]="{
-        'ativo': item.ativo,
-        'inativo': !item.ativo
-    }"
     [ngStyle]="{'font-size': fontSize + 'px' }">
-        ID: {{ item.id }} | Nome: {{ item.nome }} | Status: {{ item.ativo }}
+        ID: {{ item.id }} | Nome: {{ item.nome }} | 
+        <span [ngClass]="{
+                'ativo': item.ativo,
+                'inativo': !item.ativo
+            }">
+            {{ item.ativo ? 'ativo' : 'Inativo'}}
+        </span>
     </li>
 
     <div>
