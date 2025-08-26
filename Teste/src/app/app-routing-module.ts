@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { EstruturaModule } from './estrutura/estrutura-module';
+import { EstruturaRoutingModule } from './estrutura/estrutura-routing-module';
 
 const routes: Routes = [
   {
@@ -10,6 +12,11 @@ const routes: Routes = [
   {
     path: 'contador',
     loadChildren: () => import('./contador/contador-module').then(m => m.ContadorModule)
+  },
+
+  {
+    path: 'estrutura',
+    loadChildren: () => import('./estrutura/estrutura-module').then(m => m.EstruturaModule)
   }
 ];
 
