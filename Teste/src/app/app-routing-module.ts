@@ -32,6 +32,11 @@ const routes: Routes = [
   {
     path: 'produtos-module',
     loadChildren: () => import('./produtos-module/produtos-module-module').then(m => m.ProdutosModuleModule)
+  },
+
+  {
+    path: 'angular-material',
+    loadChildren: () => import('./angular-material/angular-material-module').then(m => m.AngularMaterialModule)
   }
   
 ];
