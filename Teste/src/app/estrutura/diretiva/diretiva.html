@@ -5,9 +5,7 @@
     [ngStyle]="{'font-size': fontSize + 'px' }">
         ID: {{ item.id }} | Nome: {{ item.nome }} | 
         <span [ngClass]="{
-                'ativo': item.ativo,
-                'inativo': !item.ativo
-            }">
+        'ativo': item.ativo, 'inativo': !item.ativo}">
             {{ item.ativo ? 'ativo' : 'Inativo'}}
         </span>
     </li>
