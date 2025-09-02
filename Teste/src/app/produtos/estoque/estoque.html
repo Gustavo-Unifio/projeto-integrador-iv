@@ -1,1 +1,19 @@
-<p>estoque works!</p>
+<button (click)="aumentarPrecos()">Aumentar preços em 10%</button>
+<button (click)="diminuirPrecos()">Diminuir preços em 10%</button>
+
+<ul>
+  <li *ngFor="let item of listaProdutos">
+    Nome: {{ item.nome }} || 
+
+    <span [ngStyle]="{'color': item.preco > 2000 ? 'blue' : 'black'}">
+      Preço: R$ {{ item.preco | number:'1.2-2' }}
+    </span> || 
+
+    <span *ngIf="item.estoque > 0; else indisponivel" [ngClass]="'disponivel'">
+      Disponível
+    </span>
+    <ng-template #indisponivel>
+      <span [ngClass]="'indisponivel'">Indisponível</span>
+    </ng-template>
+  </li>
+</ul>
