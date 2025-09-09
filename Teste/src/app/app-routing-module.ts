@@ -37,6 +37,11 @@ const routes: Routes = [
   {
     path: 'angular-material',
     loadChildren: () => import('./angular-material/angular-material-module').then(m => m.AngularMaterialModule)
+  },
+
+    {
+    path: 'dados',
+    loadChildren: () => import('./dados/dados-module').then(m => m.DadosModule)
   }
   
 ];
